@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org//dtd//mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sys.mapper.TopicMapper">
+    <insert id="saveTopic" parameterType="topic">
+        insert into tb_topic(`description`,`optionA`,`optionB`,`optionC`,`optionD`,`point`,`rAnswer`)
+        values(#{description},#{optionA},#{optionB},#{optionC},#{optionD},#{point},#{rAnswer})
+    </insert>
+
+    <select id="list" resultType="topic">
+        select * from tb_topic
+    </select>
+
+    <update id="del" parameterType="java.lang.Integer">
+        delete from tb_topic where topicId=#{topicId}
+    </update>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org//dtd//mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sys.mapper.PaperMapper">
+    <select id="listPaper" resultType="paper">
+        select * from tb_stu_paper
+    </select>
+
+    <update id="delPaper" parameterType="java.lang.Integer">
+        delete from tb_stu_paper where paperId=#{paperId}
+    </update>
+
+    <insert id="savePaper">
+        insert into tb_stu_paper(`paperName`,`topicId`,`stuId`) values(#{arg0},#{arg1},1)
+    </insert>
+</mapper>
